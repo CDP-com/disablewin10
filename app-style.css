@@ -1,0 +1,17 @@
+/* The following is custom css that will be included with your specific apps.  Feel free to add any custom css you want included in your app. */
+
+.win10-notification-image {
+	float: right;
+	margin: 0 0 15px 15px;
+	border: 2px solid #e4e4e4;
+}
+
+.statusdiv {
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+	border: 3px solid #363636;
+	border-bottom: none;
+	padding: 10px 25px;
+	background: #e4e4e4;
+}
