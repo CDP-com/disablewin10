@@ -94,16 +94,22 @@ var btn1_ScriptHasUI=0;                    	// Does the script have an UI? Neede
 //***** Use the below area for your common functions *****
 
 function CheckStatus() {
-	var DisableOSUpgrade = ReadFromRegistry("HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\DisableOSUpgrade");
-	var s= "<div class='statusdiv'>";
-	if (DisableOSUpgrade == 1) {
-		s+="Windows 10 Notification is Currently <strong>DISABLED</strong> on this Machine";
+	try {
+		var DisableOSUpgrade = ReadFromRegistry("HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\DisableOSUpgrade");
+		var s= "<div class='statusdiv'>";
+		if (DisableOSUpgrade == 1) {
+			s+="Windows 10 Notification is Currently <strong>DISABLED</strong> on this Machine";
+		}
+		else {
+			s+="Windows 10 Notification is Currently <strong>ENABLED</strong> on this Machine";
+		}
+		s+="<br /><a onClick='window.location.reload()'>Click Here to Reload and See Your Changes</a></div>";
+		document.write(s);
 	}
-	else {
-		s+="Windows 10 Notification is Currently <strong>ENABLED</strong> on this Machine";
+	catch(e) {
+		var s="<div class='statusdiv'>Windows 10 Notification is Currently <strong>ENABLED</strong> on this Machine<br /><a onClick='window.location.reload()'>Click Here to Reload and See Your Changes</a></div>";
+		document.write(s);
 	}
-	s+="<br /><a onClick='window.location.reload()'>Click Here to Reload and See Your Changes</a></div>";
-	document.write(s);
 }
 
 
