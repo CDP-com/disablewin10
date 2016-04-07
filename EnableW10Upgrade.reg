@@ -2,6 +2,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\OSUpgrade]
 "ReservationsAllowed"=dword:00000001
+"KickoffDownload"=dword:00000001
+"KickoffSource"=dword:00000001
+"Refresh"=dword:00000001
 "AllowOSUpgrade"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
