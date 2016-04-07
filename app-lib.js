@@ -7,7 +7,7 @@ var development = 1;						// 1 this app is in development, 0 this app is in prod
 /*-------------- Standard App Variables ---------------*/
 /*-----------------------------------------------------*/
 
-var appname = "disablewin10";				// This app's name / folder name which must be unique
+var appname = "disablewindows10";				// This app's name / folder name which must be unique
 var apptitle = "Disable Windows 10 Notification";				// This display title written to the HTML
 var connect_link = "http://factory.snapback-apps.com/app/disable-windows-10-notification/";     // The link to your App's Connect Page in the SnapBack Apps Factory 
 var group_name ="App Helpers";				// The group or individual responsible for this app
@@ -46,7 +46,7 @@ var btn0_LastModifiedCaution="";     		// Update timestamp if admin modifies cur
 // This is used in production only and verified by the Certification Committee
 // Do not edit if you are unfamiliar with the SnapBack Apps Service
 var btn0_ServiceName="btn0";                    // A unique name if using the service.  Need by service in xml file for button 
-var btn0_ElevateNeeded=1;                  	// Does this button need elevation? Needed by service in xml file for button
+var btn0_ElevateNeeded=0;                  	// Does this button need elevation? Needed by service in xml file for button
 var btn0_ScriptHasUI=0;                    	// Does the script have an UI? Needed by service in xml file for button
 
 
@@ -81,7 +81,7 @@ var btn1_LastModifiedCaution="";     		// Update timestamp if admin modifies cur
 // This is used in production only and verified by the Certification Committee
 // Do not edit if you are unfamiliar with the SnapBack Apps Service
 var btn1_ServiceName="btn1";                    // A unique name if using the service.  Need by service in xml file for button 
-var btn1_ElevateNeeded=1;                  	// Does this button need elevation? Needed by service in xml file for button
+var btn1_ElevateNeeded=0;                  	// Does this button need elevation? Needed by service in xml file for button
 var btn1_ScriptHasUI=0;                    	// Does the script have an UI? Needed by service in xml file for button
 
 
@@ -111,6 +111,5 @@ function CheckStatus() {
 		document.write(s);
 	}
 }
-
 
 
