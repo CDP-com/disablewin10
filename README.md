@@ -17,4 +17,6 @@ Add any notes you may find pertinent
 Changelog
 
 ----
+04/11/2016, smadara, Modified the layout of main.html
+
 04/06/2016, smadara, Initial Commit
