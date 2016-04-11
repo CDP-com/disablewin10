@@ -26,6 +26,7 @@ var btn0_Why = "You would want to run this button if you are currently receiving
 var btn0_Command = "disablereg.js";	// This is the actual script the button will be calling.
 var btn0_Source = "disablereg.txt";    // Duplicate the above script as a .txt file so that the source code can be shown on the How it Works tab.
 var btn0_CommandParms = "";                 // Add any parameters if and only if your command receives them.
+var btn0_ReloadAfterRun = 1; 
 var btn0_id="btn0";							// The unique ID of the button.  Please follow the format provided.
 
 // Permissions for button0 to be set in HKEY_LOCAL_MACHINE 
@@ -61,6 +62,7 @@ var btn1_Why = "You would want to run this button if you are currently not recei
 var btn1_Command = "enablereg.js";	// This is the actual script the button will be calling.
 var btn1_Source = "enablereg.txt";    // Duplicate the above script as a .txt file so that the source code can be shown on the How it Works tab.
 var btn1_CommandParms = "";                 // Add any parameters if and only if your command receives them.
+var btn1_ReloadAfterRun =0; 
 var btn1_id="btn1";							// The unique ID of the button.  Please follow the format provided.
 
 // Permissions for button1 to be set in HKEY_LOCAL_MACHINE 
@@ -111,4 +113,19 @@ function CheckStatus() {
 		document.write(s);
 	}
 }
+
+$(document).ready(function() {
+	try {
+		var DisableOSUpgrade = ReadFromRegistry("HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\DisableOSUpgrade");
+		if (DisableOSUpgrade == 1) {
+			$( '#cdpbutton1 button' ).css('background-color','#e6e6e6').css( 'cursor', 'not-allowed' ).attr("disabled", 'disable').attr("title", 'This button cannot be clicked since the notification is already disabled');
+		}
+		else {
+			$( '#cdpbutton2 button' ).css('background-color','#e6e6e6').css( 'cursor', 'not-allowed' ).attr("disabled", 'disable').attr("title", 'This button cannot be clicked since the notification is already enabled');
+		}
+	}
+	catch(e) {
+		$( '#cdpbutton2 button' ).css('background-color','#e6e6e6').css( 'cursor', 'not-allowed' ).attr("disabled", 'disable').attr("title", 'This button cannot be clicked since the notification is already enabled')
+	}
+})
 
