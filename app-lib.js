@@ -1,6 +1,6 @@
 //***** Use this file to set up your buttons and include any custom functions for your app *****
 // 
-var development = 1;						// 1 this app is in development, 0 this app is in production
+var development = 0;						// 1 this app is in development, 0 this app is in production
 //var currentUserDefaultCaution = "0";		// **This is the global Throw caution to the wind flag for the current use
 
 /*-----------------------------------------------------*/
@@ -20,8 +20,8 @@ var btncount = 2;                            // This is the number of buttons on
 
 //Setup for Button0 (The First Button)
 var btn0_Title = "Disable Win 10 Notification";		// This is what is displayed on the button.
-var btn0_MouseOver = "Click this button to disable your Windows 10 notification";	// This is what appears upon mouseover for the button.
-var btn0_Description = "Clicking this button will disable the Windows 10 notification.";		// This is what is displayed as the description of the button.
+var btn0_MouseOver = "Click this button to disable your Windows 10 notification until July 22, 2016";	// This is what appears upon mouseover for the button.
+var btn0_Description = "Clicking this button will disable the Windows 10 notification until July 22, 2016.";		// This is what is displayed as the description of the button.
 var btn0_Why = "You would want to run this button if you are currently receiving the Upgrade to Windows 10 notification and you wish to disable it.";		// Use this to explain to an end user why they would want to run this button.
 var btn0_Command = "disablereg.js";	// This is the actual script the button will be calling.
 var btn0_Source = "disablereg.txt";    // Duplicate the above script as a .txt file so that the source code can be shown on the How it Works tab.
@@ -47,7 +47,7 @@ var btn0_LastModifiedCaution="";     		// Update timestamp if admin modifies cur
 // This is used in production only and verified by the Certification Committee
 // Do not edit if you are unfamiliar with the SnapBack Apps Service
 var btn0_ServiceName="btn0";                    // A unique name if using the service.  Need by service in xml file for button 
-var btn0_ElevateNeeded=0;                  	// Does this button need elevation? Needed by service in xml file for button
+var btn0_ElevateNeeded=1;                  	// Does this button need elevation? Needed by service in xml file for button
 var btn0_ScriptHasUI=0;                    	// Does the script have an UI? Needed by service in xml file for button
 
 
@@ -83,7 +83,7 @@ var btn1_LastModifiedCaution="";     		// Update timestamp if admin modifies cur
 // This is used in production only and verified by the Certification Committee
 // Do not edit if you are unfamiliar with the SnapBack Apps Service
 var btn1_ServiceName="btn1";                    // A unique name if using the service.  Need by service in xml file for button 
-var btn1_ElevateNeeded=0;                  	// Does this button need elevation? Needed by service in xml file for button
+var btn1_ElevateNeeded=1;                  	// Does this button need elevation? Needed by service in xml file for button
 var btn1_ScriptHasUI=0;                    	// Does the script have an UI? Needed by service in xml file for button
 
 
