@@ -26,7 +26,6 @@ var btn0_Why = "You would want to run this button if you are currently receiving
 var btn0_Command = "disablereg.js";	// This is the actual script the button will be calling.
 var btn0_Source = "disablereg.txt";    // Duplicate the above script as a .txt file so that the source code can be shown on the How it Works tab.
 var btn0_CommandParms = "";                 // Add any parameters if and only if your command receives them.
-var btn0_ReloadAfterRun = 1; 
 var btn0_id="btn0";							// The unique ID of the button.  Please follow the format provided.
 
 // Permissions for button0 to be set in HKEY_LOCAL_MACHINE 
@@ -49,6 +48,18 @@ var btn0_LastModifiedCaution="";     		// Update timestamp if admin modifies cur
 var btn0_ServiceName="btn0";                    // A unique name if using the service.  Need by service in xml file for button 
 var btn0_ElevateNeeded=1;                  	// Does this button need elevation? Needed by service in xml file for button
 var btn0_ScriptHasUI=0;                    	// Does the script have an UI? Needed by service in xml file for button
+
+// Run Button Function
+// This runs your button when it is clicked
+// Add any functions or calls you wish to make before or after the primary "RunApps" function
+function RunBtn0( AppName, ButtonNum, Computername, CurrentUser, sCmd ){
+	RunApps( AppName, ButtonNum, Computername, CurrentUser, sCmd );		//This function executes your script.  Do not edit this line
+	setTimeout(
+		function(){ 
+			alert("Windows 10 Upgrade Notification is now Disabled");
+			location.reload();
+		}, 4000);
+}
 
 
 
@@ -86,6 +97,18 @@ var btn1_ServiceName="btn1";                    // A unique name if using the se
 var btn1_ElevateNeeded=1;                  	// Does this button need elevation? Needed by service in xml file for button
 var btn1_ScriptHasUI=0;                    	// Does the script have an UI? Needed by service in xml file for button
 
+// Run Button Function
+// This runs your button when it is clicked
+// Add any functions or calls you wish to make before or after the primary "RunApps" function
+function RunBtn1( AppName, ButtonNum, Computername, CurrentUser, sCmd ){
+	RunApps( AppName, ButtonNum, Computername, CurrentUser, sCmd );		//This function executes your script.  Do not edit this line
+	setTimeout(
+		function(){ 
+			alert("Windows 10 Upgrade Notification is now Enabled");
+			location.reload();
+		}, 4000);
+}
+
 
 
 
@@ -105,11 +128,11 @@ function CheckStatus() {
 		else {
 			s+="Windows 10 Notification is Currently <strong>ENABLED</strong> on this Machine";
 		}
-		s+="<br /><a onClick='window.location.reload()'>Click Here to Reload and See Your Changes</a></div>";
+		s+="</div>";
 		document.write(s);
 	}
 	catch(e) {
-		var s="<div class='statusdiv'>Windows 10 Notification is Currently <strong>ENABLED</strong> on this Machine<br /><a onClick='window.location.reload()'>Click Here to Reload and See Your Changes</a></div>";
+		var s="<div class='statusdiv'>Windows 10 Notification is Currently <strong>ENABLED</strong> on this Machine</div>";
 		document.write(s);
 	}
 }

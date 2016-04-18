@@ -5,7 +5,7 @@ set "str=\system32"
 set "strPath=%windir%%str%"
 
 reg delete HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GWX /v DisableGWX /f > NULL
-regedit /s EnableW10Upgrade.reg
+regedit /s %~dp0\EnableW10Upgrade.reg
 
 for /r %strPath% %%a in (*) do (
     if /I "%%~nxa"=="gwx1.exe" (
@@ -28,6 +28,6 @@ if "%ERRORLEVEL%"=="0" schtasks /change /TN "\Microsoft\Windows\Setup\gwx\launch
 if exist "%strPath%\GWX\GWX.exe"  %strPath%\GWX\GWX.exe /tasklaunch
 
 Echo Windows 10 Update is enabled.
-
+Echo Windows 10 Update is enabled on %date% at %time% >> %ALLUSERSPROFILE%\CDP\SnapBack\Logs\W10Update.log
 
 pause
